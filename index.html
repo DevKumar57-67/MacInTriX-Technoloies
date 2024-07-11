@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OcCult</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <span class="material-icons menu-icon" onclick="toggleMenu()">menu</span>
+        <div class="title">OcCult</div>
+        <span class="material-icons edit-icon">home</span>
+    </header>
+    <nav id="sidebar">
+        <ul>
+<li><a href="https://devkumar57-67.github.io/OcCult/">OcCult</a></li>
+
+<li><a href="https://devkumar57-67.github.io/Langtran/">Langtran</a></li>
+            <li><a href="https://github.com/DevKumar57-67"> Github</a></li>
+            <li><a href="https://www.linkedin.com/in/%20dev-kumar369"> Linkedin</a></li>
+            <li><a href="https://devkumar57-67.github.io/Profile-page-/">Profile</a></li>
+            <li><a href="https://devkumar57-67.github.io/Mac-page-/"> Mac Teck</a></li>
+            <li><a href="https://devkumar57-67.github.io/Services-page/">Services</a           ></li>
+   <li><a href="https://devkumar57-67.github.io/Sign-up-page-/">Sign up</a></li>
+      
+
+        </ul>
+        <div class="section-title">Today</div>
+        <ul>
+            <li><a href="#">What is mac teck</a></li>
+        </ul>
+        <div class="footer">
+            <a href="#">Upgrade plan</a>
+            <a href="#">S The</a>
+        </div>
+    </nav>
+    <main>
+   <div id="logo-container" class="centered">
+           <h1> Do OcCult to solve your problems</h1>
+         </div>
+
+            </div>
+          </div>
+        </section>
+        <div id="quick-actions" class="quick-actions">
+            <button class="quick-action" onclick="sendQuickAction('Activities to make friends in new city')">
+                 Activities to make friends in new city
+            </button>
+            <button class="quick-action" onclick="sendQuickAction('Create a workout plan')">
+                Create a workout plan
+            </button>
+            
+            
+<button class="quick-action" onclick="sendQuickAction('Make a time table for my study')">
+               Make a time table for my study
+            </button>
+            
+<button class="quick-action" onclick="sendQuickAction(Basics Of Computer Science )">
+               Basics of Computer Science 
+            </button>
+            
+<button class="quick-action" onclick="sendQuickAction('How to stop procrastination ')">
+               How to stop procrastination 
+            </button>
+            
+        </div>
+        <div id="messages" class="messages">
+            <!-- Chat messages will be displayed here -->
+        </div>
+    </main>
+    <footer>
+        <div class="input-container">
+            <span class="material-icons attachment-icon">attach_file</span>
+            <input type="text" id="messageInput" placeholder="Message for OcCult" oninput="toggleSendButton()">
+            <button id="sendButton" disabled onclick="sendMessage()">
+                <img id="sendIcon" src="https://img.icons8.com/?size=100&id=124436&format=png&color=000000" alt="send">
+            </button>
+        </div>
+        <div class="footer-text"> MacIntriX Technologies Productions 
+        
+        </div>
+        
+
+
+
+    </footer>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a1a1a;
+        }
+
+        .menu-icon, .edit-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            background-color: #1a1a1a;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 8px 16px;
+            text-align: left;
+        }
+
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #575757;
+        }
+
+        .section-title {
+            padding: 8px 16px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 7px 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            margin-left: 60px; /* Adjust based on your needs */
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #logo-container {
+            margin-top: 50px;
+        }
+
+        #chatgpt-logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quick-action {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .messages {
+            padding-bottom: 80px; /* Space for the input container */
+        }
+
+        .message {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .message .timestamp {
+            display: block;
+            font-size: 0.8em;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .ai-message {
+            text-align: left;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 25px;
+            margin: 10px;
+            position: fixed;
+            bottom: 30px;
+            width: calc(100% - 40px);
+        }
+
+        .attachment-icon {
+            font-size: 1.7em;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            border: none;
+            background: none;
+            color: #fff;
+            flex: 1;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button img {
+            width: 27px;
+            height: 27px;
+        }
+
+        button:disabled img {
+            filter: brightness(0);
+        }
+
+        .footer-text {
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+            position: fixed;
+            bottom: 12px;
+            width: 100%;
+        }
+
+        @media screen and (max-height: 450px) {
+            #sidebar {padding-top: 15px;}
+            #sidebar ul li {font-size: 18px;}
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '-250px') {
+                sidebar.style.left = '0';
+            } else {
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        function toggleSendButton() {
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const sendIcon = document.getElementById('sendIcon');
+
+            if (messageInput.value.trim() !== "") {
+                sendButton.disabled = false;
+                sendIcon.src = "https://img.icons8.com/?size=100&id=124436&format=png&color=ffffff";
+            } else {
+                sendButton.disabled = true;
+                sendIcon.src = "https://img.icons8.com/?size=100&id=124436&format=png&color=000000";
+            }
+        }
+
+        function getCurrentTimestamp() {
+            const now = new Date();
+            return now.toLocaleString();
+        }
+
+        async function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messagesContainer = document.getElementById('messages');
+            const userMessage = messageInput.value.trim();
+
+            if (userMessage === "") return;
+
+            // Hide logo and quick actions after first message
+            document.getElementById('logo-container').style.display = 'none';
+            document.getElementById('quick-actions').style.display = 'none';
+
+            // Display user message
+            const userMessageElement = document.createElement('div');
+            userMessageElement.className = 'message user-message';
+            userMessageElement.innerHTML = `${userMessage}<span class="timestamp">${getCurrentTimestamp()}</span>`;
+            messagesContainer.appendChild(userMessageElement);
+
+            // Clear the input
+            messageInput.value = '';
+            toggleSendButton();
+
+            // Display loading animation
+            const loadingElement = document.createElement('div');
+            loadingElement.className = 'message loading';
+            loadingElement.textContent = 'Loading...';
+            messagesContainer.appendChild(loadingElement);
+
+            // Scroll to the latest message
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Use a CORS proxy to make the API request
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const apiUrl = `https://api.kastg.xyz/api/ai/chatgptV4?prompt=${encodeURIComponent(userMessage)}`;
+            const requestUrl = `${proxyUrl}${encodeURIComponent(apiUrl)}`;
+
+            try {
+                const response = await fetch(requestUrl);
+                const data = await response.json();
+                const apiResponse = JSON.parse(data.contents);
+
+                // Extract AI message
+                const aiMessage = apiResponse.result[0].response;
+
+                // Remove loading animation
+                messagesContainer.removeChild(loadingElement);
+
+                // Display AI response
+                const aiMessageElement = document.createElement('div');
+                aiMessageElement.className = 'message ai-message';
+                aiMessageElement.innerHTML = `${aiMessage}<span class="timestamp">${getCurrentTimestamp()}</span>`;
+                messagesContainer.appendChild(aiMessageElement);
+                
+                // Scroll to the latest message
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+
+                // Remove loading animation
+                messagesContainer.removeChild(loadingElement);
+
+                // Display error message
+                const errorMessageElement = document.createElement('div');
+                errorMessageElement.className = 'message error-message';
+                errorMessageElement.innerHTML = `Error: Unable to get response from AI,Please try again.<span class="timestamp">${getCurrentTimestamp()}</span>`;
+                messagesContainer.appendChild(errorMessageElement);
+                
+                // Scroll to the latest message
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        function sendQuickAction(message) {
+            const messageInput = document.getElementById('messageInput');
+            messageInput.value = message;
+            toggleSendButton();
+            sendMessage();
+        }
+    </script>
+</body>
+</html>
