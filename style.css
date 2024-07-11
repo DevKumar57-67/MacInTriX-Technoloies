@@ -1,0 +1,207 @@
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a1a1a;
+        }
+
+        .menu-icon, .edit-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            background-color: #1a1a1a;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 8px 16px;
+            text-align: left;
+        }
+
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #575757;
+        }
+
+        .section-title {
+            padding: 8px 16px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 7px 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            margin-left: 60px; /* Adjust based on your needs */
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #logo-container {
+            margin-top: 50px;
+        }
+
+        #chatgpt-logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quick-action {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .messages {
+            padding-bottom: 80px; /* Space for the input container */
+        }
+
+        .message {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .message .timestamp {
+            display: block;
+            font-size: 0.8em;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .ai-message {
+            text-align: left;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 25px;
+            margin: 10px;
+            position: fixed;
+            bottom: 30px;
+            width: calc(100% - 40px);
+        }
+
+        .attachment-icon {
+            font-size: 1.7em;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            border: none;
+            background: none;
+            color: #fff;
+            flex: 1;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button img {
+            width: 27px;
+            height: 27px;
+        }
+
+        button:disabled img {
+            filter: brightness(0);
+        }
+
+        .footer-text {
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+            position: fixed;
+            bottom: 12px;
+            width: 100%;
+        }
+
+        @media screen and (max-height: 450px) {
+            #sidebar {padding-top: 15px;}
+            #sidebar ul li {font-size: 18px;}
+        }
